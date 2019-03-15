@@ -10,11 +10,11 @@ package frc.robot.subsystems;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
 import edu.wpi.first.wpilibj.Spark;
-import edu.wpi.first.wpilibj.command.InstantCommand;
+import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 
 
-public class HatchIntake extends InstantCommand {
+public class HatchIntake extends Subsystem {
   private static HatchIntake instance;
 
   public static HatchIntake getInstance() {
@@ -34,13 +34,8 @@ public class HatchIntake extends InstantCommand {
   public void outtake() {
     hatchWheel.set(-1.0);
   }
-  
-  
 
-  // Called once when the command executes
   @Override
-  protected void initialize() {
-
+  public void initDefaultCommand() {
   }
-
 }

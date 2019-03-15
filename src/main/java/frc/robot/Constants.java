@@ -41,9 +41,13 @@ public class Constants {
     
     public static final double
         kG = 0.0;
+
     public static final int 
         kHatchWheelPort = 0, 
         kHatchPivotPort = 0;
 
-    
+    public static final int
+        kIntakeCargoButton = 1,
+        kIntakeHatchButton = 12,
+        kOuttakeHatchButton = 6;
 }

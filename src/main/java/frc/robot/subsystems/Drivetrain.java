@@ -21,17 +21,18 @@ public class Drivetrain extends Subsystem {
     return instance;
   }
 
+  private static SpeedControllerGroup
+    leftMotors = new SpeedControllerGroup(RobotMap.frontLeftDriveMotor, RobotMap.backLeftDriveMotor),
+    rightMotors = new SpeedControllerGroup(RobotMap.frontRightDriveMotor, RobotMap.backRightDriveMotor);
+
   public Drivetrain() {
-    RobotMap.frontLeftDrive.setNeutralMode(NeutralMode.Brake);
-    RobotMap.frontRightDrive.setNeutralMode(NeutralMode.Brake);
-    RobotMap.backLeftDrive.setNeutralMode(NeutralMode.Brake);
-    RobotMap.backRightDrive.setNeutralMode(NeutralMode.Brake);
+    RobotMap.frontLeftDriveMotor.setNeutralMode(NeutralMode.Brake);
+    RobotMap.frontRightDriveMotor.setNeutralMode(NeutralMode.Brake);
+    RobotMap.backLeftDriveMotor.setNeutralMode(NeutralMode.Brake);
+    RobotMap.backRightDriveMotor.setNeutralMode(NeutralMode.Brake);
     rightMotors.setInverted(true);
   }
 
-  private static SpeedControllerGroup
-    leftMotors = new SpeedControllerGroup(RobotMap.frontLeftDrive, RobotMap.backLeftDrive),
-    rightMotors = new SpeedControllerGroup(RobotMap.frontRightDrive, RobotMap.backRightDrive);
   
   public void setDriveMotors(double leftVoltage, double rightVoltage) {
     leftMotors.set(leftVoltage);

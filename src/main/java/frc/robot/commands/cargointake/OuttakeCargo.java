@@ -5,15 +5,16 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands.arm;
+package frc.robot.commands.cargointake;
 
 import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class ManualArmControl extends Command {
-  public ManualArmControl() {
-    requires(Robot.arm);
+public class OuttakeCargo extends Command {
+  public OuttakeCargo() {
+    setInterruptible(true);
+    requires(Robot.cargoIntake);
   }
 
   @Override
@@ -22,8 +23,7 @@ public class ManualArmControl extends Command {
 
   @Override
   protected void execute() {
-    double speed = -Robot.oi.operatorController.getY(Hand.kLeft) * 0.3;
-    Robot.arm.setArmVoltage(speed);
+    Robot.cargoIntake.setCargoIntakeMotor(Robot.oi.operatorController.getTriggerAxis(Hand.kLeft), -Robot.oi.operatorController.getTriggerAxis(Hand.kRight));
   }
 
   @Override

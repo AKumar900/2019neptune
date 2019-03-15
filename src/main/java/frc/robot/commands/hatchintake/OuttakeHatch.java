@@ -5,26 +5,26 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands.Intake;
+package frc.robot.commands.hatchintake;
 
-import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class OuttakeCargo extends Command {
-  public OuttakeCargo() {
-    requires(Robot.cargoIntake);
+public class OuttakeHatch extends Command {
+  public OuttakeHatch() {
+    setInterruptible(true);
+    requires(Robot.hatchIntake);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    Robot.hatchIntake.outtake();
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.cargoIntake.setCargoIntakeMotor(Robot.oi.operatorController.getTriggerAxis(Hand.kLeft), -Robot.oi.operatorController.getTriggerAxis(Hand.kRight));
   }
 
   // Make this return true when this Command no longer needs to run execute()

@@ -14,12 +14,11 @@ import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.VictorSP;
 
 public class RobotMap {
-    /*change these to motors*/
   public static WPI_VictorSPX
-    frontRightDrive = new WPI_VictorSPX(Constants.kFrontRightMotor), 
-    frontLeftDrive = new WPI_VictorSPX(Constants.kFrontLeftMotor),
-    backRightDrive = new WPI_VictorSPX(Constants.kBackRightMotor), 
-    backLeftDrive = new WPI_VictorSPX(Constants.kBackLeftMotor);
+    frontRightDriveMotor = new WPI_VictorSPX(Constants.kFrontRightMotor), 
+    frontLeftDriveMotor = new WPI_VictorSPX(Constants.kFrontLeftMotor),
+    backRightDriveMotor = new WPI_VictorSPX(Constants.kBackRightMotor), 
+    backLeftDriveMotor = new WPI_VictorSPX(Constants.kBackLeftMotor);
 
   public static Spark
     leftCargoIntakeMotor = new Spark(Constants.kLeftCargoIntakeMotor), 

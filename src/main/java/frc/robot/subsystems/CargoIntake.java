@@ -10,7 +10,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
-import frc.robot.commands.Intake.OuttakeCargo;
+import frc.robot.commands.cargointake.OuttakeCargo;
 
 public class CargoIntake extends Subsystem {
   private static CargoIntake instance = new CargoIntake();

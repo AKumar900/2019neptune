@@ -9,6 +9,8 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -20,4 +22,13 @@ public class OI {
   
   public XboxController
     operatorController = new XboxController(Constants.kOperatorControllerPort);
+
+  public Button
+    intakeCargo = new JoystickButton(driveStick, Constants.kIntakeCargoButton),
+    intakeHatch = new JoystickButton(driveStick, Constants.kIntakeHatchButton),
+    outtakeHatch = new JoystickButton(operatorController, Constants.kOuttakeHatchButton);
+
+  public OI() {
+
+  }
 }
