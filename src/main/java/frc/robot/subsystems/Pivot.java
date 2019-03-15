@@ -9,30 +9,25 @@ package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.pivot.ManualPivotControl;
 
+/**
+ * Add your docs here.
+ */
+public class Pivot extends Subsystem {
+  private static Pivot instance = new Pivot();
 
-public class HatchIntake extends Subsystem {
-  private static HatchIntake instance;
-
-  public static HatchIntake getInstance() {
+  public static Pivot getInstance() {
     return instance;
   }
 
-  public Spark 
-  hatchIntakeWheelMotor = RobotMap.hatchIntakeWheelMotor;
-  
-  public void intake() {
-    hatchIntakeWheelMotor.set(0.5);
-  }
-
-  public void outtake() {
-    hatchIntakeWheelMotor.set(-1.0);
-  }
+  private WPI_TalonSRX
+    hatchIntakePivotMotor = RobotMap.hatchIntakePivotMotor;
 
   @Override
   public void initDefaultCommand() {
+    setDefaultCommand(new ManualPivotControl());
   }
 }

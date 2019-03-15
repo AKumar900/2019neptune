@@ -12,12 +12,14 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
 import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.CargoIntake;
-
 import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.HatchIntake;
+import frc.robot.subsystems.Pivot;
+
 public class Robot extends TimedRobot {
   public static OI oi;
 
@@ -26,14 +28,11 @@ public class Robot extends TimedRobot {
   public static Climber climber = Climber.getInstance();
   public static Arm arm = Arm.getInstance();
   public static HatchIntake hatchIntake = HatchIntake.getInstance();
+  public static Pivot pivot = Pivot.getInstance();
   
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
-  /**
-   * This function is run when the robot is first started up and should be
-   * used for any initialization code.
-   */
   @Override
   public void robotInit() {
     oi = new OI();
@@ -41,7 +40,6 @@ public class Robot extends TimedRobot {
     SmartDashboard.putData("Auto mode", m_chooser);
   }
 
-  
   @Override
   public void robotPeriodic() {
   }
@@ -57,19 +55,16 @@ public class Robot extends TimedRobot {
 
   @Override
   public void autonomousInit() {
-
-
   }
 
-  
   @Override
   public void autonomousPeriodic() {
-    Scheduler.getInstance().run();
+    // Scheduler.getInstance().run();
+    teleopPeriodic();
   }
 
   @Override
   public void teleopInit() {
-   
   }
 
   @Override
@@ -77,9 +72,6 @@ public class Robot extends TimedRobot {
     Scheduler.getInstance().run();
   }
 
-  /**
-   * This function is called periodically during test mode.
-   */
   @Override
   public void testPeriodic() {
   }

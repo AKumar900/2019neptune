@@ -33,9 +33,10 @@ public class RobotMap {
   public static WPI_TalonSRX
     armMasterMotor = new WPI_TalonSRX(Constants.kArmMasterPort),
     armSlaveMotor = new WPI_TalonSRX(Constants.kArmSlavePort);
+    
   public static Spark 
-    hatchWheel = new Spark(Constants.kHatchWheelPort);
+    hatchIntakeWheelMotor = new Spark(Constants.kHatchIntakeWheelPort);
   
   public static WPI_TalonSRX
-    hatchPivot = new WPI_TalonSRX(Constants.kHatchPivotPort);
+    hatchIntakePivotMotor = new WPI_TalonSRX(Constants.kHatchIntakePivotPort);
 }
