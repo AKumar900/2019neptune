@@ -16,6 +16,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import frc.robot.commands.arm.ManualArmControl;
+import frc.robot.Constants;
 
 /**
  * Add your docs here.
@@ -54,13 +55,17 @@ public class Arm extends Subsystem {
     // armMasterMotor.configMotionCruiseVelocity(Constants.kArmCruiseVelocity, 0);
     // armMasterMotor.configMotionAcceleration(Constants.kArmAcceleration, 0);
 
-    // armMasterMotor.setSelectedSensorPosition(0, 0, 0);
+    armMasterMotor.setSelectedSensorPosition(0, 0, 0);
 
     armSlaveMotor.follow(armMasterMotor);
   }
   
   public void setArmVoltage(double voltage) {
-    armMasterMotor.set(ControlMode.PercentOutput, voltage, DemandType.ArbitraryFeedForward, Constants.kG * cos(getAngle()));
+    armMasterMotor.set(ControlMode.PercentOutput, voltage, DemandType.ArbitraryFeedForward, Constants.kG * Math.cos(getAngle()));
+  }
+
+  public double getAngle() {
+    return 180 - ((double) armMasterMotor.getSelectedSensorPosition() / 4096 * 360);
   }
 
   @Override

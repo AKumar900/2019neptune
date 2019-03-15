@@ -41,6 +41,9 @@ public class Constants {
     
     public static final double
         kG = 0.0;
+    public static final int 
+        kHatchWheelPort = 0, 
+        kHatchPivotPort = 0;
 
     
 }
