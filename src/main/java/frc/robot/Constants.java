@@ -12,10 +12,10 @@ package frc.robot;
  */
 public class Constants {
     public static final int 
-        kFrontLeftMotor = 0, 
-        kFrontRightMotor = 0, 
-        kBackLeftMotor = 0, 
-        kBackRightMotor = 0;
+        kFrontLeftMotor = 2, 
+        kFrontRightMotor = 5, 
+        kBackLeftMotor = 4,
+        kBackRightMotor = 3;
 
     public static final int
         kDriveStickPort = 0,
@@ -26,8 +26,21 @@ public class Constants {
         kMaxAxis = 1,
         kLowRangeTurn = 0.2,
         kHighRangeTurn = 1;
+
     public static final int 
         kLeftCargoIntakeMotor = 0, 
         kRightCargoIntakeMotor = 1;
-        
+ 
+    public static final int 
+        kClimberLiftPort = 2, 
+        kClimberWheelPort = 3;
+    
+    public static final int 
+        kArmMasterPort = 6,
+        kArmSlavePort = 7;
+    
+    public static final double
+        kG = 0.0;
+
+    
 }

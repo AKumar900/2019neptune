@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.CargoIntake;
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -21,12 +21,16 @@ import frc.robot.subsystems.CargoIntake;
  * creating this project, you must also update the build.gradle file in the
  * project.
  */
+import frc.robot.subsystems.Climber;
+import frc.robot.subsystems.Drivetrain;
 public class Robot extends TimedRobot {
   // public static ExampleSubsystem m_subsystem = new ExampleSubsystem();
   public static OI oi;
 
   public static Drivetrain drivetrain = Drivetrain.getInstance();
   public static CargoIntake cargoIntake = CargoIntake.getInstance();
+  public static Climber climber = Climber.getInstance();
+  public static Arm arm = Arm.getInstance();
   
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();

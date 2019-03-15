@@ -7,23 +7,31 @@
 
 package frc.robot;
 
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.VictorSP;
 
-/**
- * The RobotMap is a mapping from the ports sensors and actuators are wired into
- * to a variable name. This provides flexibility changing wiring, makes checking
- * the wiring easier and significantly reduces the number of magic numbers
- * floating around.
- */
 public class RobotMap {
+    /*change these to motors*/
   public static WPI_VictorSPX
     frontRightDrive = new WPI_VictorSPX(Constants.kFrontRightMotor), 
     frontLeftDrive = new WPI_VictorSPX(Constants.kFrontLeftMotor),
     backRightDrive = new WPI_VictorSPX(Constants.kBackRightMotor), 
     backLeftDrive = new WPI_VictorSPX(Constants.kBackLeftMotor);
+
   public static Spark
     leftCargoIntakeMotor = new Spark(Constants.kLeftCargoIntakeMotor), 
     rightCargoIntakeMotor = new Spark(Constants.kRightCargoIntakeMotor);
+  
+  public static Spark 
+    climberWheelMotor = new Spark(Constants.kClimberWheelPort);
+  
+  public static VictorSP
+    climberLiftMotor = new VictorSP(Constants.kClimberLiftPort);
+  
+  public static WPI_TalonSRX
+    armMasterMotor = new WPI_TalonSRX(Constants.kArmMasterPort),
+    armSlaveMotor = new WPI_TalonSRX(Constants.kArmSlavePort);
 }

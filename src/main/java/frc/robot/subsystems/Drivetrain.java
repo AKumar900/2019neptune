@@ -7,19 +7,26 @@
 
 package frc.robot.subsystems;
 
+import com.ctre.phoenix.motorcontrol.NeutralMode;
+
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import frc.robot.commands.drivetrain.ArcadeDrive;
 
-/**
- * Add your docs here.
- */
 public class Drivetrain extends Subsystem {
   private static Drivetrain instance = new Drivetrain();
 
   public static Drivetrain getInstance() {
     return instance;
+  }
+
+  public Drivetrain() {
+    RobotMap.frontLeftDrive.setNeutralMode(NeutralMode.Brake);
+    RobotMap.frontRightDrive.setNeutralMode(NeutralMode.Brake);
+    RobotMap.backLeftDrive.setNeutralMode(NeutralMode.Brake);
+    RobotMap.backRightDrive.setNeutralMode(NeutralMode.Brake);
+    rightMotors.setInverted(true);
   }
 
   private static SpeedControllerGroup
