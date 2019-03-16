@@ -13,9 +13,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
 import frc.robot.commands.pivot.ManualPivotControl;
 
-/**
- * Add your docs here.
- */
+
 public class Pivot extends Subsystem {
   private static Pivot instance = new Pivot();
 

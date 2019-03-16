@@ -12,13 +12,13 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
 import frc.robot.subsystems.Arm;
 import frc.robot.subsystems.CargoIntake;
 import frc.robot.subsystems.Climber;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.HatchIntake;
 import frc.robot.subsystems.Pivot;
+import frc.robot.subsystems.Vision;
 
 public class Robot extends TimedRobot {
   public static OI oi;
@@ -29,6 +29,7 @@ public class Robot extends TimedRobot {
   public static Arm arm = Arm.getInstance();
   public static HatchIntake hatchIntake = HatchIntake.getInstance();
   public static Pivot pivot = Pivot.getInstance();
+  public static Vision vision = Vision.getInstance();
   
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();

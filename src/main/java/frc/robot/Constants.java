@@ -7,9 +7,6 @@
 
 package frc.robot;
 
-/**
- * Add your docs here.
- */
 public class Constants {
 
     // Drivetrain Constants
@@ -24,13 +21,15 @@ public class Constants {
         kMaxAxis = 1,
         kLowRangeTurn = 0.2,
         kHighRangeTurn = 1;
+        
     // OI Constants
     public static final int
         kDriveStickPort = 0,
         kOperatorControllerPort = 1,
         kIntakeCargoButton = 1,
         kIntakeHatchButton = 12,
-        kOuttakeHatchButton = 6;
+        kOuttakeHatchButton = 6,
+        kAlignToTargetButton = 8;
 
     // Cargo Intake Constants
     public static final int 
@@ -54,4 +53,16 @@ public class Constants {
     public static final int 
         kHatchIntakeWheelPort = 0, 
         kHatchIntakePivotPort = 0;
+
+    // Vision Constanats
+    public static final int
+        kCameraWidth = 320;
+    
+    public static final double
+        kTurnP = 0.002,
+        kTurnD = 0.0003;
+
+    // Universal Constants
+    public static final double
+        kDT = 0.02;
 }

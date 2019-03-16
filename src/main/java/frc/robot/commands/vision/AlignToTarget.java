@@ -5,28 +5,37 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands.climber;
+package frc.robot.commands.vision;
 
-import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
+import frc.robot.Constants;
 
-public class ManualClimberControl extends Command {
-  public ManualClimberControl() {
+public class AlignToTarget extends Command {
+  private double prev, offset, turn, cameraWidth;
+
+  public AlignToTarget() {
+    requires(Robot.vision);
   }
 
   @Override
   protected void initialize() {
+    prev = 0;
+    offset = 0;
+    turn = 0;
+    cameraWidth = Constants.kCameraWidth;
   }
 
   @Override
   protected void execute() {
-    
-    double climberLiftVoltage = 0.5 * Robot.oi.operatorController.getY(Hand.kLeft);
-    double climberWheelVoltage = 1 * Robot.oi.operatorController.getY(Hand.kRight);
+    double centerX = Robot.vision.getRightTapeX();
+    if (centerX == 0) offset = 0;
+    else offset = (cameraWidth/2)-centerX;
 
-    Robot.climber.setLiftMotor(climberLiftVoltage);
-    Robot.climber.setWheelMotor(climberWheelVoltage);
+    turn = (offset * Constants.kTurnP) + (Constants.kTurnD * ((offset - prev) / Constants.kDT));
+    prev = offset;
+
+    Robot.drivetrain.setDriveMotors(-turn, turn);
   }
 
   @Override

@@ -11,11 +11,11 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.cargointake.IntakeCargo;
+import frc.robot.commands.hatchintake.IntakeHatch;
+import frc.robot.commands.hatchintake.OuttakeHatch;
+import frc.robot.commands.vision.AlignToTarget;
 
-/**
- * This class is the glue that binds the controls on the physical operator
- * interface to the commands and command groups that allow control of the robot.
- */
 public class OI {
   public Joystick
     driveStick = new Joystick(Constants.kDriveStickPort);
@@ -26,9 +26,13 @@ public class OI {
   public Button
     intakeCargo = new JoystickButton(driveStick, Constants.kIntakeCargoButton),
     intakeHatch = new JoystickButton(driveStick, Constants.kIntakeHatchButton),
-    outtakeHatch = new JoystickButton(operatorController, Constants.kOuttakeHatchButton);
-
-  public OI() {
-
-  }
+    outtakeHatch = new JoystickButton(operatorController, Constants.kOuttakeHatchButton),
+    alignToTarget = new JoystickButton(driveStick, Constants.kAlignToTargetButton);
+    
+    public OI() {
+      intakeCargo.whileHeld(new IntakeCargo());
+      intakeHatch.whileHeld(new IntakeHatch());
+      outtakeHatch.whileHeld(new OuttakeHatch());
+      alignToTarget.whileHeld(new AlignToTarget());
+    }
 }

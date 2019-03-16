@@ -26,7 +26,7 @@ public class IntakeHatch extends Command {
   }
 
   @Override
-  protected boolean isFinished() {
+  protected boolean isFinished() { 
     return false;
   }
 
