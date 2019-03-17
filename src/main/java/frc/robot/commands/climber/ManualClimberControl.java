@@ -22,11 +22,11 @@ public class ManualClimberControl extends Command {
   @Override
   protected void execute() {
     
-    double climberLiftVoltage = 0.5 * Robot.oi.operatorController.getY(Hand.kLeft);
-    double climberWheelVoltage = 1 * Robot.oi.operatorController.getY(Hand.kRight);
+    double climberLiftVoltage = -0.8 * Robot.oi.operatorController.getY(Hand.kLeft);
+    double climberWheelVoltage = -1 * Robot.oi.operatorController.getY(Hand.kRight);
 
-    Robot.climber.setLiftMotor(climberLiftVoltage);
-    Robot.climber.setWheelMotor(climberWheelVoltage);
+    // Robot.climber.setLiftMotor(climberLiftVoltage);
+    // Robot.climber.setWheelMotor(climberWheelVoltage);
   }
 
   @Override

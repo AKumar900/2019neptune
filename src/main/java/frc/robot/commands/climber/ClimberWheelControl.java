@@ -5,30 +5,33 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands.pivot;
+package frc.robot.commands.climber;
 
-import edu.wpi.first.wpilibj.GenericHID.Hand;
+import org.junit.experimental.runners.Enclosed;
+
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-import frc.robot.RobotMap;
 
-public class ManualPivotControl extends Command {
-  public ManualPivotControl() {
+public class ClimberWheelControl extends Command {
+  public ClimberWheelControl() {
     // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
-    requires(Robot.pivot);
+    requires(Robot.climber);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    RobotMap.hatchIntakeWheelMotor.set(0);
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    RobotMap.hatchIntakePivotMotor.set(0.2*-Robot.oi.operatorController.getY(Hand.kRight) + 0.15);
+    if (Robot.oi.driveStick.getPOV() == 0)
+      Robot.climber.setWheelMotor(1);
+    else if (Robot.oi.driveStick.getPOV() == 180)
+      Robot.climber.setWheelMotor(-1);
+    else
+      Robot.climber.setWheelMotor(0);
   }
 
   // Make this return true when this Command no longer needs to run execute()

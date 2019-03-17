@@ -43,6 +43,8 @@ public class Robot extends TimedRobot {
 
   @Override
   public void robotPeriodic() {
+    if (RobotMap.armZeroLimitSwitch.getPressed() == true)
+      arm.resetArmPosition();
   }
 
   @Override

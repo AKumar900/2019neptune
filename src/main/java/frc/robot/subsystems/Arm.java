@@ -61,7 +61,7 @@ public class Arm extends Subsystem {
   }
   
   public void setArmVoltage(double voltage) {
-    armMasterMotor.set(ControlMode.PercentOutput, voltage, DemandType.ArbitraryFeedForward, Constants.kG * Math.cos(getAngle()));
+    armMasterMotor.set(ControlMode.PercentOutput, voltage, DemandType.ArbitraryFeedForward, Constants.kG * Math.cos(Math.toRadians(90 - getAngle())));
   }
 
   public double getAngle() {
@@ -71,5 +71,11 @@ public class Arm extends Subsystem {
   @Override
   public void initDefaultCommand() {
     setDefaultCommand(new ManualArmControl());
+  }
+
+  public void resetArmPosition()
+  {
+    armMasterMotor.setSelectedSensorPosition(0,0,0);
+    armSlaveMotor.follow(armMasterMotor);
   }
 }

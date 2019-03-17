@@ -10,6 +10,7 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.hatchintake.OuttakeHatch;;
 
 
 public class HatchIntake extends Subsystem {
@@ -32,5 +33,6 @@ public class HatchIntake extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
+    setDefaultCommand(new OuttakeHatch());
   }
 }

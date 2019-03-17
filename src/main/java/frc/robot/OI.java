@@ -12,9 +12,11 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.cargointake.IntakeCargo;
+import frc.robot.commands.climber.DeployClimber;
+import frc.robot.commands.climber.RetractClimber;
 import frc.robot.commands.hatchintake.IntakeHatch;
-import frc.robot.commands.hatchintake.OuttakeHatch;
 import frc.robot.commands.vision.AlignToTarget;
+import frc.robot.commands.vision.DriveToTarget;
 
 public class OI {
   public Joystick
@@ -26,13 +28,17 @@ public class OI {
   public Button
     intakeCargo = new JoystickButton(driveStick, Constants.kIntakeCargoButton),
     intakeHatch = new JoystickButton(driveStick, Constants.kIntakeHatchButton),
-    outtakeHatch = new JoystickButton(operatorController, Constants.kOuttakeHatchButton),
-    alignToTarget = new JoystickButton(driveStick, Constants.kAlignToTargetButton);
+    alignToTarget = new JoystickButton(driveStick, Constants.kAlignToTargetButton),
+    driveToTarget = new JoystickButton(driveStick, Constants.kDriveToTargetButton),
+    deployClimber = new JoystickButton(operatorController, Constants.kDeployClimberButton),
+    retractClimber = new JoystickButton(operatorController, Constants.kRetractClimberButton);
     
     public OI() {
       intakeCargo.whileHeld(new IntakeCargo());
       intakeHatch.whileHeld(new IntakeHatch());
-      outtakeHatch.whileHeld(new OuttakeHatch());
       alignToTarget.whileHeld(new AlignToTarget());
+      deployClimber.whileHeld(new DeployClimber());
+      retractClimber.whileHeld(new RetractClimber());
+      driveToTarget.whileHeld(new DriveToTarget());
     }
 }

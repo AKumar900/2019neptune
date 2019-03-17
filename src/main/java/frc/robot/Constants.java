@@ -39,15 +39,20 @@ public class Constants {
     // Climber Constants
     public static final int 
         kClimberLiftPort = 2, 
-        kClimberWheelPort = 3;
+        kClimberWheelPort = 3,
+        kClimberTopLimitSwitchPort = 0,
+        kClimberBottomLimitSwitchPort = 0,
+        kDeployClimberButton = 0,
+        kRetractClimberButton = 0;
     
     // Arm Constants
     public static final int 
         kArmMasterPort = 6,
-        kArmSlavePort = 7;
+        kArmSlavePort = 7,
+        kArmZeroLimitSwitchPort = 0;
     
     public static final double
-        kG = 0.1;
+        kG = 0.2;
 
     // Hatch Intake Constants
     public static final int 
@@ -56,7 +61,9 @@ public class Constants {
 
     // Vision Constanats
     public static final int
-        kCameraWidth = 320;
+        kCameraWidth = 320,
+        kThrottleP = 0,
+        kDriveToTargetButton = 0;
     
     public static final double
         kTurnP = 0.002,

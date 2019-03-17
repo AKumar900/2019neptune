@@ -7,6 +7,7 @@
 
 package frc.robot.commands.hatchintake;
 
+import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
@@ -19,7 +20,7 @@ public class OuttakeHatch extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.hatchIntake.outtake();
+    Robot.hatchIntake.hatchIntakeWheelMotor.set(0.5*-Robot.oi.operatorController.getTriggerAxis(Hand.kRight));
   }
 
   // Called repeatedly when this Command is scheduled to run

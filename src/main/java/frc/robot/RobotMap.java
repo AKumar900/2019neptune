@@ -7,11 +7,14 @@
 
 package frc.robot;
 
+import com.ctre.phoenix.motorcontrol.LimitSwitchNormal;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.VictorSP;
+import frc.util.LimitSwitch;
 
 public class RobotMap {
   public static WPI_VictorSPX
@@ -39,4 +42,9 @@ public class RobotMap {
   
   public static WPI_TalonSRX
     hatchIntakePivotMotor = new WPI_TalonSRX(Constants.kHatchIntakePivotPort);
+
+  public static LimitSwitch
+    armZeroLimitSwitch = new LimitSwitch(Constants.kArmZeroLimitSwitchPort),
+    climberTopLimitSwitch = new LimitSwitch(Constants.kClimberTopLimitSwitchPort),
+    climberBottomLimitSwitchPort = new LimitSwitch(Constants.kClimberBottomLimitSwitchPort);
 }

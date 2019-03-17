@@ -11,13 +11,16 @@ import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.VictorSP;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.climber.ClimberWheelControl;
 import frc.robot.commands.climber.ManualClimberControl;
 
 public class Climber extends Subsystem {
   private static Climber instance = new Climber();
   
   public static Climber getInstance() {
-      return instance;
+    climberLiftMotor.setInverted(true);
+    climberWheelMotor.setInverted(true);
+    return instance;
   }
   private static Spark 
     climberWheelMotor = RobotMap.climberWheelMotor;
@@ -35,7 +38,7 @@ public class Climber extends Subsystem {
 
   @Override
   public void initDefaultCommand() {
-    setDefaultCommand(new ManualClimberControl());
+    setDefaultCommand(new ClimberWheelControl());
   }
 
 }

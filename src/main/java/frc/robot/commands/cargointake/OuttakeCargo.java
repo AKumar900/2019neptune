@@ -23,7 +23,7 @@ public class OuttakeCargo extends Command {
 
   @Override
   protected void execute() {
-    Robot.cargoIntake.setCargoIntakeMotor(Robot.oi.operatorController.getTriggerAxis(Hand.kLeft), -Robot.oi.operatorController.getTriggerAxis(Hand.kRight));
+    Robot.cargoIntake.setCargoIntakeMotor(Robot.oi.operatorController.getTriggerAxis(Hand.kLeft), -Robot.oi.operatorController.getTriggerAxis(Hand.kLeft));
   }
 
   @Override
