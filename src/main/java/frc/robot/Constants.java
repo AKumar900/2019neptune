@@ -11,10 +11,10 @@ public class Constants {
 
     // Drivetrain Constants
     public static final int 
-        kFrontLeftMotor = 2, 
-        kFrontRightMotor = 5, 
-        kBackLeftMotor = 4,
-        kBackRightMotor = 3;
+        kFrontLeftMotor = 4, 
+        kFrontRightMotor = 3, 
+        kBackLeftMotor = 5,
+        kBackRightMotor = 2;
 
     public static final double
         kMinAxis = -1,
