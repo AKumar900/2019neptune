@@ -5,14 +5,14 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands.climber;
+package frc.robot.commands.climber.auto;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
 
-public class DeployClimber extends Command {
-  public DeployClimber() {
+public class AutoDeployClimber extends Command {
+  public AutoDeployClimber() {
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
   }
@@ -25,20 +25,15 @@ public class DeployClimber extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if (RobotMap.climberTopLimitSwitch.getPressed() == false)
-    {
-      Robot.climber.setLiftMotor(-0.8);
-    }
-    else
-    {
-      Robot.climber.setLiftMotor(0);
-    }
-
+    Robot.climber.setLiftMotor(-0.8);
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
+    if (RobotMap.climberTopLimitSwitch.getPressed() == false)
+      return true;
+    else
     return false;
   }
 
@@ -52,6 +47,5 @@ public class DeployClimber extends Command {
   // subsystems is scheduled to run
   @Override
   protected void interrupted() {
-    end();
   }
 }

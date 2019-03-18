@@ -39,7 +39,7 @@ public class DriveToTarget extends Command {
   protected void execute() {
     // Retrieve values regarding RRT attributes
     // double tapeCenter = Vision.getTapeCenter();
-    double centerX = Robot.vision.getCenterRightTape();
+    double centerX = Robot.vision.getRightTapeX();
     area2 = Robot.vision.getRightTapeSize();
     if (centerX == 0) offset = 0;
     else offset = (cameraWidth/2)-centerX;

@@ -46,5 +46,5 @@ public class RobotMap {
   public static LimitSwitch
     armZeroLimitSwitch = new LimitSwitch(Constants.kArmZeroLimitSwitchPort),
     climberTopLimitSwitch = new LimitSwitch(Constants.kClimberTopLimitSwitchPort),
-    climberBottomLimitSwitchPort = new LimitSwitch(Constants.kClimberBottomLimitSwitchPort);
+    climberBottomLimitSwitch = new LimitSwitch(Constants.kClimberBottomLimitSwitchPort);
 }

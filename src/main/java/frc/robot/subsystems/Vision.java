@@ -70,11 +70,6 @@ public class Vision extends Subsystem {
     return (xEntry2.getDouble(-1000) + xEntry1.getDouble(-1000))/ 2;
   }
 
-  public double getCenterRightTape()
-  {
-    return xEntry2.getDouble(-1000);
-  }
-
   @Override
   public void initDefaultCommand() {
   }

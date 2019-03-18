@@ -14,6 +14,8 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.cargointake.IntakeCargo;
 import frc.robot.commands.climber.DeployClimber;
 import frc.robot.commands.climber.RetractClimber;
+import frc.robot.commands.climber.auto.AutoDeployClimber;
+import frc.robot.commands.climber.auto.AutoRetractClimber;
 import frc.robot.commands.hatchintake.IntakeHatch;
 import frc.robot.commands.vision.AlignToTarget;
 import frc.robot.commands.vision.DriveToTarget;
@@ -31,7 +33,9 @@ public class OI {
     alignToTarget = new JoystickButton(driveStick, Constants.kAlignToTargetButton),
     driveToTarget = new JoystickButton(driveStick, Constants.kDriveToTargetButton),
     deployClimber = new JoystickButton(operatorController, Constants.kDeployClimberButton),
-    retractClimber = new JoystickButton(operatorController, Constants.kRetractClimberButton);
+    retractClimber = new JoystickButton(operatorController, Constants.kRetractClimberButton),
+    autoDeployClimber = new JoystickButton(operatorController, Constants.kAutoDeployClimberButton),
+    autoRetractClimber = new JoystickButton(operatorController, Constants.kAutoRetractClimberButton);
     
     public OI() {
       intakeCargo.whileHeld(new IntakeCargo());
@@ -40,5 +44,9 @@ public class OI {
       deployClimber.whileHeld(new DeployClimber());
       retractClimber.whileHeld(new RetractClimber());
       driveToTarget.whileHeld(new DriveToTarget());
+      /*
+      autoDeployClimber.whenPressed(new AutoDeployClimber());
+      autoRetractClimber.whenPressed(new AutoRetractClimber());
+      */
     }
 }

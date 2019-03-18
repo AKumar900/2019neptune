@@ -25,16 +25,16 @@ public class RetractClimber extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.climber.setLiftMotor(-0.5);
+    if (RobotMap.climberBottomLimitSwitch.getPressed() == false)
+      Robot.climber.setLiftMotor(0.5);
+    else 
+      Robot.climber.setLiftMotor(0);
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    if (RobotMap.climberBottomLimitSwitchPort.getPressed() == true)
-      return true;
-    else 
-      return false;
+    return false;
   }
 
   // Called once after isFinished returns true

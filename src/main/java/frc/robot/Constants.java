@@ -43,7 +43,9 @@ public class Constants {
         kClimberTopLimitSwitchPort = 0,
         kClimberBottomLimitSwitchPort = 0,
         kDeployClimberButton = 0,
-        kRetractClimberButton = 0;
+        kRetractClimberButton = 0,
+        kAutoDeployClimberButton = 0,
+        kAutoRetractClimberButton = 0;
     
     // Arm Constants
     public static final int 
