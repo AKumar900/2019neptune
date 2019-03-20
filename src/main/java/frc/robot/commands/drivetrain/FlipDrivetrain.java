@@ -8,47 +8,38 @@
 package frc.robot.commands.drivetrain;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Constants;
 import frc.robot.Robot;
-import frc.util.RobotMath;
 
-public class ArcadeDrive extends Command {
-
-  double speed, finalLeftSpeed, finalRightSpeed;
-
-  public ArcadeDrive() {
-    requires(Robot.drivetrain);
+public class FlipDrivetrain extends Command {
+  public FlipDrivetrain() {
+    // Use requires() here to declare subsystem dependencies
+    // eg. requires(chassis);
   }
 
+  // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+    Robot.drivetrain.flip();
   }
 
+  // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if(Math.abs(Robot.oi.driveStick.getY()) > 0.08) {
-      speed = -Robot.oi.driveStick.getY();
-    }
-    else {
-      speed = 0;
-    }
-    double acceleration = Robot.oi.driveStick.getThrottle();
-    double throttleAcc = RobotMath.normalize(Constants.kMaxAxis, Constants.kMinAxis, Constants.kLowRangeTurn, Constants.kHighRangeTurn, acceleration);
-    double turn = Robot.oi.driveStick.getX() * 0.5;
-    finalLeftSpeed = (speed + turn) * throttleAcc;
-    finalRightSpeed = (speed - turn) * throttleAcc;
-    Robot.drivetrain.setDriveMotors(finalLeftSpeed, finalRightSpeed);
   }
 
+  // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return false;
+    return true;
   }
 
+  // Called once after isFinished returns true
   @Override
   protected void end() {
   }
 
+  // Called when another command which requires one or more of the same
+  // subsystems is scheduled to run
   @Override
   protected void interrupted() {
   }

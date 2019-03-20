@@ -16,6 +16,7 @@ import frc.robot.commands.drivetrain.ArcadeDrive;
 
 public class Drivetrain extends Subsystem {
   private static Drivetrain instance = new Drivetrain();
+  private boolean flipped = false;
 
   public static Drivetrain getInstance() {
     return instance;
@@ -35,8 +36,25 @@ public class Drivetrain extends Subsystem {
 
   
   public void setDriveMotors(double leftVoltage, double rightVoltage) {
-    leftMotors.set(leftVoltage);
-    rightMotors.set(rightVoltage);
+    if (flipped == false)
+    {
+      leftMotors.set(leftVoltage);
+      rightMotors.set(rightVoltage);
+    }
+    else if (flipped == true)
+    {
+      leftMotors.set(-rightVoltage);
+      rightMotors.set(-leftVoltage);
+    }
+
+  }
+
+  /**
+   * Flips the drivetrain
+   */
+  public void flip() 
+  {
+    flipped = !flipped;
   }
 
   @Override

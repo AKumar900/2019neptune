@@ -14,7 +14,8 @@ public class Constants {
         kFrontLeftMotor = 4, 
         kFrontRightMotor = 3, 
         kBackLeftMotor = 5,
-        kBackRightMotor = 2;
+        kBackRightMotor = 2,
+        kDrivetrainFlipperButton = 0;
 
     public static final double
         kMinAxis = -1,
