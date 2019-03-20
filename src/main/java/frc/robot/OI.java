@@ -31,10 +31,10 @@ public class OI {
     intakeHatch = new JoystickButton(driveStick, Constants.kIntakeHatchButton),
     alignToTarget = new JoystickButton(driveStick, Constants.kAlignToTargetButton),
     driveToTarget = new JoystickButton(driveStick, Constants.kDriveToTargetButton),
-    deployClimber = new JoystickButton(operatorController, Constants.kDeployClimberButton),
-    retractClimber = new JoystickButton(operatorController, Constants.kRetractClimberButton),
-    autoDeployClimber = new JoystickButton(operatorController, Constants.kAutoDeployClimberButton),
-    autoRetractClimber = new JoystickButton(operatorController, Constants.kAutoRetractClimberButton),
+    deployClimber = new JoystickButton(driveStick, Constants.kDeployClimberButton),
+    retractClimber = new JoystickButton(driveStick, Constants.kRetractClimberButton),
+    autoDeployClimber = new JoystickButton(driveStick, Constants.kAutoDeployClimberButton),
+    autoRetractClimber = new JoystickButton(driveStick, Constants.kAutoRetractClimberButton),
     flipDrivetrain = new JoystickButton(driveStick, Constants.kDrivetrainFlipperButton);
     
     public OI() {

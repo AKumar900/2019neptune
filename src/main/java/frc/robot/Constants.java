@@ -15,7 +15,7 @@ public class Constants {
         kFrontRightMotor = 3, 
         kBackLeftMotor = 5,
         kBackRightMotor = 2,
-        kDrivetrainFlipperButton = 0;
+        kDrivetrainFlipperButton = 2;
 
     public static final double
         kMinAxis = -1,
@@ -30,7 +30,7 @@ public class Constants {
         kIntakeCargoButton = 1,
         kIntakeHatchButton = 12,
         kOuttakeHatchButton = 6,
-        kAlignToTargetButton = 8;
+        kAlignToTargetButton = 9;
 
     // Cargo Intake Constants
     public static final int 
@@ -43,10 +43,10 @@ public class Constants {
         kClimberWheelPort = 3,
         kClimberTopLimitSwitchPort = 0,
         kClimberBottomLimitSwitchPort = 0,
-        kDeployClimberButton = 0,
-        kRetractClimberButton = 0,
-        kAutoDeployClimberButton = 0,
-        kAutoRetractClimberButton = 0;
+        kDeployClimberButton = 3,
+        kRetractClimberButton = 5,
+        kAutoDeployClimberButton = 4,
+        kAutoRetractClimberButton = 6;
     
     // Arm Constants
     public static final int 
@@ -66,7 +66,7 @@ public class Constants {
     public static final int
         kCameraWidth = 320,
         kThrottleP = 0,
-        kDriveToTargetButton = 0;
+        kDriveToTargetButton = 10;
     
     public static final double
         kTurnP = 0.002,

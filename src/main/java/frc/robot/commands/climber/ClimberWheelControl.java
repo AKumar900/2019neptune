@@ -7,8 +7,6 @@
 
 package frc.robot.commands.climber;
 
-import org.junit.experimental.runners.Enclosed;
-
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
