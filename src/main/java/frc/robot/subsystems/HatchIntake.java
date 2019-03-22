@@ -14,11 +14,11 @@ import frc.robot.commands.hatchintake.OuttakeHatch;;
 
 
 public class HatchIntake extends Subsystem {
-  private static HatchIntake instance;
+  // private static HatchIntake instance;
 
-  public static HatchIntake getInstance() {
-    return instance;
-  }
+  // public static HatchIntake getInstance() {
+  //   return instance;
+  // }
 
   public Spark 
     hatchIntakeWheelMotor = RobotMap.hatchIntakeWheelMotor;

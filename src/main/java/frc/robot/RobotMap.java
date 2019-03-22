@@ -43,8 +43,8 @@ public class RobotMap {
   public static WPI_TalonSRX
     hatchIntakePivotMotor = new WPI_TalonSRX(Constants.kHatchIntakePivotPort);
 
-  public static LimitSwitch
-    armZeroLimitSwitch = new LimitSwitch(Constants.kArmZeroLimitSwitchPort),
-    climberTopLimitSwitch = new LimitSwitch(Constants.kClimberTopLimitSwitchPort),
-    climberBottomLimitSwitch = new LimitSwitch(Constants.kClimberBottomLimitSwitchPort);
+  public static DigitalInput
+    armZeroLimitSwitch = new DigitalInput(Constants.kArmZeroLimitSwitchPort);
+    // climberTopLimitSwitch = new DigitalInput(Constants.kClimberTopLimitSwitchPort),
+    // climberBottomLimitSwitch = new DigitalInput(Constants.kClimberBottomLimitSwitchPort);
 }

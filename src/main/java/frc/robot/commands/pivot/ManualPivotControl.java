@@ -22,13 +22,13 @@ public class ManualPivotControl extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    RobotMap.hatchIntakeWheelMotor.set(0);
+    // RobotMap.hatchIntakeWheelMotor.set(0);
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    RobotMap.hatchIntakePivotMotor.set(0.2*-Robot.oi.operatorController.getY(Hand.kRight) + 0.15);
+    RobotMap.hatchIntakePivotMotor.set(0.3*-Robot.oi.operatorController.getY(Hand.kRight) + 0.15);
   }
 
   // Make this return true when this Command no longer needs to run execute()

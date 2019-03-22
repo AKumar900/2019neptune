@@ -22,7 +22,7 @@ public class ManualArmControl extends Command {
 
   @Override
   protected void execute() {
-    double speed = -Robot.oi.operatorController.getY(Hand.kLeft) * 0.3;
+    double speed = -Robot.oi.operatorController.getY(Hand.kLeft) * 0.6;
     Robot.arm.setArmVoltage(speed);
   }
 

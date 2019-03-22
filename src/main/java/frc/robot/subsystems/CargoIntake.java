@@ -13,11 +13,11 @@ import frc.robot.RobotMap;
 import frc.robot.commands.cargointake.OuttakeCargo;
 
 public class CargoIntake extends Subsystem {
-  private static CargoIntake instance = new CargoIntake();
+  // private static CargoIntake instance = new CargoIntake();
 
-  public static CargoIntake getInstance() {
-    return instance;
-  }
+  // public static CargoIntake getInstance() {
+  //   return instance;
+  // }
 
   private Spark 
     leftCargoIntakeMotor = RobotMap.leftCargoIntakeMotor, 

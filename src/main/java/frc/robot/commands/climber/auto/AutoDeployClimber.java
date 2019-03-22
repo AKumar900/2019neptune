@@ -31,9 +31,9 @@ public class AutoDeployClimber extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    if (RobotMap.climberTopLimitSwitch.getPressed() == false)
-      return true;
-    else
+    // if (RobotMap.climberTopLimitSwitch.get() == false)
+    //   return true;
+    // else
     return false;
   }
 

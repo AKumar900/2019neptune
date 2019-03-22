@@ -34,13 +34,13 @@ public class Constants {
 
     // Cargo Intake Constants
     public static final int 
-        kLeftCargoIntakeMotor = 0, 
-        kRightCargoIntakeMotor = 1;
+        kLeftCargoIntakeMotor = 4, 
+        kRightCargoIntakeMotor = 5;
  
     // Climber Constants
     public static final int 
-        kClimberLiftPort = 2, 
-        kClimberWheelPort = 3,
+        kClimberLiftPort = 1, 
+        kClimberWheelPort = 0,
         kClimberTopLimitSwitchPort = 0,
         kClimberBottomLimitSwitchPort = 0,
         kDeployClimberButton = 3,
@@ -55,12 +55,12 @@ public class Constants {
         kArmZeroLimitSwitchPort = 0;
     
     public static final double
-        kG = 0.2;
+        kG = 0.15;
 
     // Hatch Intake Constants
     public static final int 
-        kHatchIntakeWheelPort = 0, 
-        kHatchIntakePivotPort = 0;
+        kHatchIntakeWheelPort = 3, 
+        kHatchIntakePivotPort = 2;
 
     // Vision Constanats
     public static final int

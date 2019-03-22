@@ -16,11 +16,11 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  * Add your docs here.
  */
 public class Vision extends Subsystem {
-  private static Vision instance = new Vision();
+  // private static Vision instance = new Vision();
 
-  public static Vision getInstance() {
-    return instance;
-  }
+  // public static Vision getInstance() {
+  //   return instance;
+  // }
 
   NetworkTableEntry xEntry1;
   NetworkTableEntry yEntry1;

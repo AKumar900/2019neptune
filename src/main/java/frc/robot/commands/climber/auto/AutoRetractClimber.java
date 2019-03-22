@@ -31,9 +31,9 @@ public class AutoRetractClimber extends Command {
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    if (RobotMap.climberBottomLimitSwitch.getPressed() == true)
-      return false;
-    else 
+    // if (RobotMap.climberBottomLimitSwitch.get() == true)
+    //   return false;
+    // else 
       return true;
   }
 

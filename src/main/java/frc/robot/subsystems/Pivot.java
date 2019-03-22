@@ -15,11 +15,11 @@ import frc.robot.commands.pivot.ManualPivotControl;
 
 
 public class Pivot extends Subsystem {
-  private static Pivot instance = new Pivot();
+  // private static Pivot instance = new Pivot();
 
-  public static Pivot getInstance() {
-    return instance;
-  }
+  // public static Pivot getInstance() {
+  //   return instance;
+  // }
 
   private WPI_TalonSRX
     hatchIntakePivotMotor = RobotMap.hatchIntakePivotMotor;

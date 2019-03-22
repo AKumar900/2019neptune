@@ -23,13 +23,19 @@ import frc.robot.subsystems.Vision;
 public class Robot extends TimedRobot {
   public static OI oi;
 
-  public static Drivetrain drivetrain = Drivetrain.getInstance();
-  public static CargoIntake cargoIntake = CargoIntake.getInstance();
-  public static Climber climber = Climber.getInstance();
-  public static Arm arm = Arm.getInstance();
-  public static HatchIntake hatchIntake = HatchIntake.getInstance();
-  public static Pivot pivot = Pivot.getInstance();
-  public static Vision vision = Vision.getInstance();
+  // public static Drivetrain drivetrain = Drivetrain.getInstance();
+  public static Drivetrain drivetrain = new Drivetrain();
+  // public static CargoIntake cargoIntake = CargoIntake.getInstance();
+  public static CargoIntake cargoIntake = new CargoIntake();
+  // public static Climber climber = Climber.getInstance();
+  public static Climber climber = new Climber();
+  // public static Arm arm = Arm.getInstance();
+  public static Arm arm = new Arm();
+  // public static HatchIntake hatchIntake = HatchIntake.getInstance();
+  public static HatchIntake hatchIntake = new HatchIntake();
+  // public static Pivot pivot = Pivot.getInstance();
+  public static Pivot pivot = new Pivot();
+  public static Vision vision = new Vision();
   
   Command m_autonomousCommand;
   SendableChooser<Command> m_chooser = new SendableChooser<>();
@@ -43,7 +49,8 @@ public class Robot extends TimedRobot {
 
   @Override
   public void robotPeriodic() {
-    if (RobotMap.armZeroLimitSwitch.getPressed() == true)
+    SmartDashboard.putBoolean("Arm Reset", RobotMap.armZeroLimitSwitch.get());
+    if (RobotMap.armZeroLimitSwitch.get() == false)
       arm.resetArmPosition();
   }
 

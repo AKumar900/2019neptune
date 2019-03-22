@@ -22,11 +22,11 @@ import frc.robot.Constants;
  * Add your docs here.
  */
 public class Arm extends Subsystem {
-  private static Arm instance = new Arm();
+  // private static Arm instance = new Arm();
 
-  public static Arm getInstance() {
-    return instance;
-  }
+  // public static Arm getInstance() {
+  //   return instance;
+  // }
 
   private static WPI_TalonSRX
     armMasterMotor = RobotMap.armMasterMotor,
@@ -61,7 +61,7 @@ public class Arm extends Subsystem {
   }
   
   public void setArmVoltage(double voltage) {
-    armMasterMotor.set(ControlMode.PercentOutput, voltage, DemandType.ArbitraryFeedForward, Constants.kG * Math.cos(Math.toRadians(90 - getAngle())));
+    armMasterMotor.set(ControlMode.PercentOutput, voltage, DemandType.ArbitraryFeedForward, -Constants.kG * Math.cos(Math.toRadians(90 - getAngle())));
   }
 
   public double getAngle() {

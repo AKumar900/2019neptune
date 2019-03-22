@@ -25,14 +25,14 @@ public class DeployClimber extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    if (RobotMap.climberTopLimitSwitch.getPressed() == false)
-    {
+    // if (RobotMap.climberTopLimitSwitch.get() == false)
+    // {
       Robot.climber.setLiftMotor(-0.8);
-    }
-    else
-    {
-      Robot.climber.setLiftMotor(0);
-    }
+    // }
+    // else
+    // {
+    //   Robot.climber.setLiftMotor(0);
+    // }
 
   }
 

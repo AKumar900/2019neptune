@@ -15,12 +15,12 @@ import frc.robot.RobotMap;
 import frc.robot.commands.drivetrain.ArcadeDrive;
 
 public class Drivetrain extends Subsystem {
-  private static Drivetrain instance = new Drivetrain();
+  // private static Drivetrain instance = new Drivetrain();
   private boolean flipped = false;
 
-  public static Drivetrain getInstance() {
-    return instance;
-  }
+  // public static Drivetrain getInstance() {
+  //   return instance;
+  // }
 
   private static SpeedControllerGroup
     leftMotors = new SpeedControllerGroup(RobotMap.frontLeftDriveMotor, RobotMap.backLeftDriveMotor),
